@@ -42,8 +42,6 @@ static const NSTimeInterval VideoPlayerVideoViewProgressUpdateInterval = 1.0f / 
     [self setupNotifications];
     
     [self setupProgressTimer];
-    
-    [self pause];
 }
 
 
@@ -52,9 +50,10 @@ static const NSTimeInterval VideoPlayerVideoViewProgressUpdateInterval = 1.0f / 
 
 - (void)setupVideoPlayer
 {
-    NSURL *videoURL = [[NSBundle mainBundle] URLForResource:@"A7_intro_line_v006_sfx_01" withExtension:@"mov"];
+    NSURL *videoURL = [[NSBundle mainBundle] URLForResource:@"oceans-clip" withExtension:@"mp4"];
     self.moviePlayerController = [[MPMoviePlayerController alloc] initWithContentURL:videoURL];
     self.moviePlayerController.controlStyle = MPMovieControlStyleNone;
+    self.moviePlayerController.shouldAutoplay = NO;
     [self.view addSubview: self.moviePlayerController.view];
     self.moviePlayerController.view.translatesAutoresizingMaskIntoConstraints = NO;
 }

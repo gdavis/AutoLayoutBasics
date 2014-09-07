@@ -34,6 +34,7 @@
     [self.view.subviews enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
         view.layer.borderColor = [UIColor lightGrayColor].CGColor;
         view.layer.borderWidth = 1.0f / [UIScreen mainScreen].scale;
+        view.backgroundColor = [UIColor blackColor];
     }];
 }
 
@@ -93,13 +94,13 @@
 
 - (IBAction)largeButtonTouched:(id)sender
 {
-    [self.delegate controlsDidTouchLargePlayer];
+    [self.delegate controlsDidTouchFullscreen];
 }
 
 
 - (IBAction)smallButtonTouched:(id)sender
 {
-    [self.delegate controlsDidTouchSmallPlayer];
+    [self.delegate controlsDidTouchSmallscreen];
 }
 
 

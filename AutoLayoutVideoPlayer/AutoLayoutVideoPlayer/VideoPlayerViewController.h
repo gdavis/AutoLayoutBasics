@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol VideoPlayerViewControllerDelegate;
+
 @interface VideoPlayerViewController : UIViewController
+
+@property (nonatomic, getter=isFullscreen, readonly) BOOL fullscreen;
+@property (nonatomic, assign) id <VideoPlayerViewControllerDelegate> delegate;
+
+@end
+
+
+@protocol VideoPlayerViewControllerDelegate <NSObject>
+
+- (void)videoPlayerDidChangeFullscreenMode:(BOOL)isFullscreen;
 
 @end

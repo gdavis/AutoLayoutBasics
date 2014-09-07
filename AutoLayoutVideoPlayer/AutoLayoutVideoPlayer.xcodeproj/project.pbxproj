@@ -17,8 +17,8 @@
 		778673C819BCD84C006E649F /* VideoPlayerControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 778673C719BCD84C006E649F /* VideoPlayerControlsViewController.m */; };
 		778673CB19BCD858006E649F /* VideoPlayerVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 778673CA19BCD858006E649F /* VideoPlayerVideoViewController.m */; };
 		778673CD19BCD95A006E649F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778673CC19BCD95A006E649F /* MediaPlayer.framework */; };
-		778673D219BCDBC2006E649F /* A7_intro_line_v006_sfx_01.mov in Resources */ = {isa = PBXBuildFile; fileRef = 778673D119BCDBC2006E649F /* A7_intro_line_v006_sfx_01.mov */; };
-		778673D519BD044C006E649F /* VideoPlayerCaptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 778673D419BD044C006E649F /* VideoPlayerCaptionViewController.m */; };
+		778673D519BD044C006E649F /* VideoPlayerCaptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 778673D419BD044C006E649F /* VideoPlayerCaptionController.m */; };
+		778673D719BD1C1C006E649F /* oceans-clip.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 778673D619BD1BE3006E649F /* oceans-clip.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +51,9 @@
 		778673C919BCD858006E649F /* VideoPlayerVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerVideoViewController.h; sourceTree = "<group>"; };
 		778673CA19BCD858006E649F /* VideoPlayerVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerVideoViewController.m; sourceTree = "<group>"; };
 		778673CC19BCD95A006E649F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		778673D119BCDBC2006E649F /* A7_intro_line_v006_sfx_01.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = A7_intro_line_v006_sfx_01.mov; sourceTree = "<group>"; };
-		778673D319BD044C006E649F /* VideoPlayerCaptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerCaptionViewController.h; sourceTree = "<group>"; };
-		778673D419BD044C006E649F /* VideoPlayerCaptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerCaptionViewController.m; sourceTree = "<group>"; };
+		778673D319BD044C006E649F /* VideoPlayerCaptionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerCaptionController.h; sourceTree = "<group>"; };
+		778673D419BD044C006E649F /* VideoPlayerCaptionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerCaptionController.m; sourceTree = "<group>"; };
+		778673D619BD1BE3006E649F /* oceans-clip.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "oceans-clip.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,6 @@
 				778673A419BCD7E6006E649F /* ViewController.h */,
 				778673A519BCD7E6006E649F /* ViewController.m */,
 				778673C219BCD81D006E649F /* Video Player */,
-				778673A719BCD7E6006E649F /* Main.storyboard */,
 				778673C019BCD805006E649F /* Images.xcassets */,
 				7786739D19BCD7E6006E649F /* Supporting Files */,
 			);
@@ -112,7 +111,7 @@
 		7786739D19BCD7E6006E649F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				778673D119BCDBC2006E649F /* A7_intro_line_v006_sfx_01.mov */,
+				778673D619BD1BE3006E649F /* oceans-clip.mp4 */,
 				7786739E19BCD7E6006E649F /* Info.plist */,
 				7786739F19BCD7E6006E649F /* main.m */,
 			);
@@ -145,8 +144,9 @@
 				778673C719BCD84C006E649F /* VideoPlayerControlsViewController.m */,
 				778673C919BCD858006E649F /* VideoPlayerVideoViewController.h */,
 				778673CA19BCD858006E649F /* VideoPlayerVideoViewController.m */,
-				778673D319BD044C006E649F /* VideoPlayerCaptionViewController.h */,
-				778673D419BD044C006E649F /* VideoPlayerCaptionViewController.m */,
+				778673D319BD044C006E649F /* VideoPlayerCaptionController.h */,
+				778673D419BD044C006E649F /* VideoPlayerCaptionController.m */,
+				778673A719BCD7E6006E649F /* Main.storyboard */,
 			);
 			name = "Video Player";
 			sourceTree = "<group>";
@@ -239,8 +239,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				778673D719BD1C1C006E649F /* oceans-clip.mp4 in Resources */,
 				778673A919BCD7E6006E649F /* Main.storyboard in Resources */,
-				778673D219BCDBC2006E649F /* A7_intro_line_v006_sfx_01.mov in Resources */,
 				778673C119BCD805006E649F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,7 +262,7 @@
 				778673A619BCD7E6006E649F /* ViewController.m in Sources */,
 				778673C519BCD832006E649F /* VideoPlayerViewController.m in Sources */,
 				778673CB19BCD858006E649F /* VideoPlayerVideoViewController.m in Sources */,
-				778673D519BD044C006E649F /* VideoPlayerCaptionViewController.m in Sources */,
+				778673D519BD044C006E649F /* VideoPlayerCaptionController.m in Sources */,
 				778673A319BCD7E6006E649F /* AppDelegate.m in Sources */,
 				778673A019BCD7E6006E649F /* main.m in Sources */,
 				778673C819BCD84C006E649F /* VideoPlayerControlsViewController.m in Sources */,

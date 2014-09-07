@@ -25,7 +25,7 @@
 @required
 - (void)controlsDidTouchPlay;
 - (void)controlsDidTouchPause;
-- (void)controlsDidTouchSmallPlayer;
-- (void)controlsDidTouchLargePlayer;
+- (void)controlsDidTouchSmallscreen;
+- (void)controlsDidTouchFullscreen;
 
 @end
