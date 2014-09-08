@@ -25,6 +25,7 @@
             *stop = YES;
         }
     }];
+    
     return captionText;
 }
 
@@ -37,12 +38,12 @@
                      @{
                          @"start": @(0.1),
                          @"end": @(0.5),
-                         @"text": @"Caption One"
+                         @"text": @"[Exciting music]"
                          },
                      @{
                          @"start": @(0.7),
                          @"end": @(0.9),
-                         @"text": @"Caption two with a really long line of text that will wrap to multiple lines."
+                         @"text": @"Caption two with a really long line of text that will wrap to multiple lines. Its so very long. I can't believe these birds are still diving."
                          },
                      ];
     }

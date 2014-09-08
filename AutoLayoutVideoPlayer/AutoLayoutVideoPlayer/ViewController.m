@@ -54,7 +54,7 @@
         videoSize = self.view.bounds.size;
     }
     else {
-        videoSize = CGSizeMake(320.0f, 280.0f);
+        videoSize = CGSizeMake(720.0f, 480.0f);
     }
     
     self.videoWidthConstraint.constant = videoSize.width;
