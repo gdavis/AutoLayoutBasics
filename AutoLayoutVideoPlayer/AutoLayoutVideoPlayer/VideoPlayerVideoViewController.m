@@ -25,14 +25,6 @@ static const NSTimeInterval VideoPlayerVideoViewProgressUpdateInterval = 1.0f / 
 @implementation VideoPlayerVideoViewController
 
 
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
-    [self.progressTimer invalidate];
-}
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -45,12 +37,28 @@ static const NSTimeInterval VideoPlayerVideoViewProgressUpdateInterval = 1.0f / 
 }
 
 
+- (void)updateViewConstraints
+{
+    [super updateViewConstraints];
+    
+    NSArray *videoPlayerConstraints = [self constraintsToFillSuperviewWithView:self.moviePlayerController.view];
+    [self.view addConstraints:videoPlayerConstraints];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    [self.progressTimer invalidate];
+}
+
+
 #pragma mark - Setup
 
 
 - (void)setupVideoPlayer
 {
-    NSURL *videoURL = [[NSBundle mainBundle] URLForResource:@"oceans-clip" withExtension:@"mp4"];
+    NSURL *videoURL = [[NSBundle mainBundle] URLForResource:@"oceans-clip-sm" withExtension:@"mp4"];
     self.moviePlayerController = [[MPMoviePlayerController alloc] initWithContentURL:videoURL];
     self.moviePlayerController.controlStyle = MPMovieControlStyleNone;
     self.moviePlayerController.shouldAutoplay = NO;
@@ -64,6 +72,11 @@ static const NSTimeInterval VideoPlayerVideoViewProgressUpdateInterval = 1.0f / 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(playStateDidChange:)
                                                  name:MPMoviePlayerPlaybackStateDidChangeNotification
+                                               object:self.moviePlayerController];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(playbackDidFinish:)
+                                                 name:MPMoviePlayerPlaybackDidFinishNotification
                                                object:self.moviePlayerController];
 }
 
@@ -102,14 +115,6 @@ static const NSTimeInterval VideoPlayerVideoViewProgressUpdateInterval = 1.0f / 
 }
 
 
-- (void)updateViewConstraints
-{
-    [super updateViewConstraints];
-    
-    [self.view addConstraints:[self constraintsToFillSuperviewWithView:self.moviePlayerController.view]];
-}
-
-
 #pragma mark - Video Control
 
 
@@ -140,6 +145,21 @@ static const NSTimeInterval VideoPlayerVideoViewProgressUpdateInterval = 1.0f / 
             break;
             
         case MPMoviePlaybackStateStopped:
+            [self.delegate videoPlayerPlaybackDidStop];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
+- (void)playbackDidFinish:(NSNotification *)notification
+{
+    MPMovieFinishReason finishReason = [[[notification userInfo] valueForKey:MPMoviePlayerPlaybackDidFinishReasonUserInfoKey] integerValue];
+    
+    switch (finishReason) {
+        case MPMovieFinishReasonPlaybackEnded:
             [self.delegate videoPlayerPlaybackDidStop];
             break;
             

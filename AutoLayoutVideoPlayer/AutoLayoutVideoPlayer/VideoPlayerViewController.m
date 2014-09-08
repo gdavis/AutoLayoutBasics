@@ -19,12 +19,17 @@
 @property (nonatomic, strong) VideoPlayerCaptionController *captionsController;
 
 @property (weak, nonatomic) IBOutlet UIButton *largePlayButton;
+@property (weak, nonatomic) IBOutlet UIView *videoContainerView;
 
 @property (nonatomic, getter=isFullscreen) BOOL fullscreen;
 
 #warning Exercise code block
 @property (weak, nonatomic) IBOutlet UILabel *closedCaptionLabel;
 #warning END Exercise code block
+
+#warning Exercise Code Block
+@property (nonatomic, strong) UIViewController *endSlate;
+#warning End Exercise Code Block
 
 @end
 
@@ -55,6 +60,16 @@
 }
 
 
+#warning Exercise Code Block - Fixes issue with closed captioning text not adjusting lines when resizing.
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    self.closedCaptionLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.frame);
+}
+#warning Exercise Code Block END
+
+
 - (void)setFullscreen:(BOOL)fullscreen
 {
     _fullscreen = fullscreen;
@@ -70,6 +85,53 @@
 {
     [self.videoViewController play];
 }
+
+
+#warning Example Code
+#pragma mark - End Slate
+
+- (void)showEndSlateView
+{
+    self.endSlate = [self.storyboard instantiateViewControllerWithIdentifier:@"endSlate"];
+    [self.view insertSubview:self.endSlate.view aboveSubview:self.videoContainerView];
+    self.endSlate.view.translatesAutoresizingMaskIntoConstraints = NO;
+    
+//    NSArray *constraints = [self constraintsToFillSuperviewWithView:self.endSlate.view];
+    NSArray *constraints = [self constraintsWithVisualFormatToFillSuperviewWithView:self.endSlate.view];
+    
+    [self.view addConstraints:constraints];
+}
+
+
+- (NSArray *)constraintsWithVisualFormatToFillSuperviewWithView:(UIView *)view
+{
+    NSDictionary *views = NSDictionaryOfVariableBindings(view);
+    NSMutableArray *constraints = [NSMutableArray array];
+    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:kNilOptions metrics:nil views:views]];
+    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|" options:kNilOptions metrics:nil views:views]];
+    return [constraints copy];
+}
+
+
+- (NSArray *)constraintsToFillSuperviewWithView:(UIView *)view
+{
+    NSMutableArray *constraints = [NSMutableArray array];
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0f constant:0.0f]];
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0f constant:0.0f]];
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0f constant:0.0f]];
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0f constant:0.0f]];
+    return [constraints copy];
+}
+
+
+
+- (void)hideEndSlateView
+{
+    [self.endSlate.view removeFromSuperview];
+    self.endSlate = nil;
+}
+#warning Example Code END
+
 
 
 #pragma mark - VideoPlayerControlsViewControllerDelegate
@@ -106,20 +168,22 @@
 {
     self.largePlayButton.hidden = YES;
     self.controlsViewController.showPauseButton = YES;
+    
+    [self hideEndSlateView];
 }
 
 
 - (void)videoPlayerPlaybackDidPause
 {
-    self.largePlayButton.hidden = NO;
     self.controlsViewController.showPauseButton = NO;
 }
 
 
 - (void)videoPlayerPlaybackDidStop
 {
-    self.largePlayButton.hidden = NO;
     self.controlsViewController.showPauseButton = NO;
+    
+    [self showEndSlateView];
 }
 
 

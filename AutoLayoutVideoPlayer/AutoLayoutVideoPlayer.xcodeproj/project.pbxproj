@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		771717AC19BD255400B903AB /* VideoPlayerCaptionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 771717AB19BD255400B903AB /* VideoPlayerCaptionLabel.m */; };
+		771717AE19BD294200B903AB /* oceans-clip-sm.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 771717AD19BD291A00B903AB /* oceans-clip-sm.mp4 */; };
 		778673A019BCD7E6006E649F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7786739F19BCD7E6006E649F /* main.m */; };
 		778673A319BCD7E6006E649F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 778673A219BCD7E6006E649F /* AppDelegate.m */; };
 		778673A619BCD7E6006E649F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 778673A519BCD7E6006E649F /* ViewController.m */; };
@@ -32,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		771717AA19BD255400B903AB /* VideoPlayerCaptionLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerCaptionLabel.h; sourceTree = "<group>"; };
+		771717AB19BD255400B903AB /* VideoPlayerCaptionLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerCaptionLabel.m; sourceTree = "<group>"; };
+		771717AD19BD291A00B903AB /* oceans-clip-sm.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "oceans-clip-sm.mp4"; sourceTree = "<group>"; };
 		7786739A19BCD7E6006E649F /* AutoLayoutVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoLayoutVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7786739E19BCD7E6006E649F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7786739F19BCD7E6006E649F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				778673D619BD1BE3006E649F /* oceans-clip.mp4 */,
+				771717AD19BD291A00B903AB /* oceans-clip-sm.mp4 */,
 				7786739E19BCD7E6006E649F /* Info.plist */,
 				7786739F19BCD7E6006E649F /* main.m */,
 			);
@@ -146,6 +152,8 @@
 				778673CA19BCD858006E649F /* VideoPlayerVideoViewController.m */,
 				778673D319BD044C006E649F /* VideoPlayerCaptionController.h */,
 				778673D419BD044C006E649F /* VideoPlayerCaptionController.m */,
+				771717AA19BD255400B903AB /* VideoPlayerCaptionLabel.h */,
+				771717AB19BD255400B903AB /* VideoPlayerCaptionLabel.m */,
 				778673A719BCD7E6006E649F /* Main.storyboard */,
 			);
 			name = "Video Player";
@@ -239,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771717AE19BD294200B903AB /* oceans-clip-sm.mp4 in Resources */,
 				778673D719BD1C1C006E649F /* oceans-clip.mp4 in Resources */,
 				778673A919BCD7E6006E649F /* Main.storyboard in Resources */,
 				778673C119BCD805006E649F /* Images.xcassets in Resources */,
@@ -265,6 +274,7 @@
 				778673D519BD044C006E649F /* VideoPlayerCaptionController.m in Sources */,
 				778673A319BCD7E6006E649F /* AppDelegate.m in Sources */,
 				778673A019BCD7E6006E649F /* main.m in Sources */,
+				771717AC19BD255400B903AB /* VideoPlayerCaptionLabel.m in Sources */,
 				778673C819BCD84C006E649F /* VideoPlayerControlsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +462,7 @@
 				778673BC19BCD7E7006E649F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		778673BD19BCD7E7006E649F /* Build configuration list for PBXNativeTarget "AutoLayoutVideoPlayerTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +471,7 @@
 				778673BF19BCD7E7006E649F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
