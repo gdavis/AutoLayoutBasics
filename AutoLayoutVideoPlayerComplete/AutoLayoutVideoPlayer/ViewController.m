@@ -14,8 +14,10 @@
 
 @property (nonatomic, strong) VideoPlayerViewController *videoPlayerViewController;
 
+#warning Exercise code block
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *videoWidthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *videoHeightConstraint;
+#warning Exercise code block END
 
 @end
 
@@ -31,12 +33,7 @@
     }
 }
 
-#warning Exercise Code
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-    [self.view setNeedsUpdateConstraints];
-}
-
+#pragma mark al1 - start
 
 - (void)updateViewConstraints
 {
@@ -64,13 +61,29 @@
 
 - (void)videoPlayerDidChangeFullscreenMode:(BOOL)isFullscreen
 {
+    // al2
     [self updateVideoPlayerConstraints];
     
-    [UIView animateWithDuration:1.0 animations:^{
-        [self.view layoutIfNeeded];
-    }];
+    BOOL animate = YES;
+    
+    if (animate) {
+        [UIView animateWithDuration:1.0 animations:^{
+            [self.view layoutIfNeeded];
+        }];
+    }
+    else {
+        [self.view setNeedsLayout];
+    }
 }
-#warning Exercise Code END
+
+
+// al3
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [self.view setNeedsUpdateConstraints];
+}
+
+#pragma mark al1 - end
 
 
 @end

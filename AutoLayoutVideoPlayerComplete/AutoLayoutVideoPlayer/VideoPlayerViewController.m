@@ -87,6 +87,7 @@
 }
 
 
+// al8
 #warning Example Code
 #pragma mark - End Slate
 
@@ -94,6 +95,8 @@
 {
     self.endSlate = [self.storyboard instantiateViewControllerWithIdentifier:@"endSlate"];
     [self.view insertSubview:self.endSlate.view aboveSubview:self.videoContainerView];
+    
+    // Important!
     self.endSlate.view.translatesAutoresizingMaskIntoConstraints = NO;
     
 //    NSArray *constraints = [self constraintsToFillSuperviewWithView:self.endSlate.view];

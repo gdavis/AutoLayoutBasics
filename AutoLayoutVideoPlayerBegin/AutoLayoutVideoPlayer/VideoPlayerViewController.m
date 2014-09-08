@@ -23,6 +23,8 @@
 
 @property (nonatomic, getter=isFullscreen) BOOL fullscreen;
 
+// al7
+
 @end
 
 
@@ -58,6 +60,11 @@
     
     [self.delegate videoPlayerDidChangeFullscreenMode:fullscreen];
 }
+
+
+// al5
+
+// al8
 
 
 #pragma mark - Large Play Button
@@ -121,6 +128,8 @@
 - (void)videoPlayerPlaybackDidChangeProgress:(CGFloat)progress
 {
     self.controlsViewController.progress = progress;
+    
+    // al4
 }
 
 

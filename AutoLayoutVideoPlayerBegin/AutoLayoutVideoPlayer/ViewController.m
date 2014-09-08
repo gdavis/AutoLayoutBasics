@@ -14,9 +14,6 @@
 
 @property (nonatomic, strong) VideoPlayerViewController *videoPlayerViewController;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *videoWidthConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *videoHeightConstraint;
-
 @end
 
 
@@ -32,10 +29,16 @@
 }
 
 
+// al1
+
+
 - (void)videoPlayerDidChangeFullscreenMode:(BOOL)isFullscreen
 {
-
+    // al2
 }
+
+
+// al3
 
 
 @end
