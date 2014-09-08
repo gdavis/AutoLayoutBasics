@@ -169,7 +169,9 @@
     self.largePlayButton.hidden = YES;
     self.controlsViewController.showPauseButton = YES;
     
+#warning Exercise code block
     [self hideEndSlateView];
+#warning Exercise code block END
 }
 
 
@@ -183,7 +185,9 @@
 {
     self.controlsViewController.showPauseButton = NO;
     
+#warning Exercise code block
     [self showEndSlateView];
+#warning Exercise code block END
 }
 
 
