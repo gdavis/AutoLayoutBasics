@@ -87,8 +87,8 @@
 }
 
 
-// al8
 #warning Example Code
+// al8
 #pragma mark - End Slate
 
 - (void)showEndSlateView
@@ -99,23 +99,24 @@
     // Important!
     self.endSlate.view.translatesAutoresizingMaskIntoConstraints = NO;
     
-//    NSArray *constraints = [self constraintsToFillSuperviewWithView:self.endSlate.view];
-    NSArray *constraints = [self constraintsWithVisualFormatToFillSuperviewWithView:self.endSlate.view];
+    // TODO: add some constraints
+    NSArray *constraints = [self constraintsToFillSuperviewWithView:self.endSlate.view];
+//    NSArray *constraints = [self constraintsWithVisualFormatToFillSuperviewWithView:self.endSlate.view];
+//    NSArray *constraints = [self constraintsWithVisualFormatToCenterView:self.endSlate.view size:CGSizeMake(200.0f, 200.0f)];
     
     [self.view addConstraints:constraints];
 }
 
-
-- (NSArray *)constraintsWithVisualFormatToFillSuperviewWithView:(UIView *)view
+- (void)hideEndSlateView
 {
-    NSDictionary *views = NSDictionaryOfVariableBindings(view);
-    NSMutableArray *constraints = [NSMutableArray array];
-    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:kNilOptions metrics:nil views:views]];
-    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|" options:kNilOptions metrics:nil views:views]];
-    return [constraints copy];
+    [self.endSlate.view removeFromSuperview];
+    self.endSlate = nil;
 }
+#warning Example Code END
 
 
+#warning Example Code
+// al9
 - (NSArray *)constraintsToFillSuperviewWithView:(UIView *)view
 {
     NSMutableArray *constraints = [NSMutableArray array];
@@ -125,16 +126,37 @@
     [constraints addObject:[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0f constant:0.0f]];
     return [constraints copy];
 }
+#warning Example Code END
 
-
-
-- (void)hideEndSlateView
+#warning Example Code
+// al10
+- (NSArray *)constraintsWithVisualFormatToFillSuperviewWithView:(UIView *)view
 {
-    [self.endSlate.view removeFromSuperview];
-    self.endSlate = nil;
+    NSDictionary *views = NSDictionaryOfVariableBindings(view);
+    NSMutableArray *constraints = [NSMutableArray array];
+    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:kNilOptions metrics:nil views:views]];
+    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|" options:kNilOptions metrics:nil views:views]];
+    return [constraints copy];
 }
 #warning Example Code END
 
+#warning Example Code
+// al11
+- (NSArray *)constraintsWithVisualFormatToCenterView:(UIView *)view size:(CGSize)viewSize
+{
+    NSDictionary *views = NSDictionaryOfVariableBindings(view);
+    NSDictionary *metrics = @{ @"width" : @(viewSize.width),
+                               @"height" : @(viewSize.height) };
+    NSMutableArray *constraints = [NSMutableArray array];
+    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[view(==width)]" options:kNilOptions metrics:metrics views:views]];
+    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[view(==height)]" options:kNilOptions metrics:metrics views:views]];
+    
+    // its currently not possible to do it with visual format alone!
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeCenterX multiplier:1.0f constant:0.0f]];
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeCenterY multiplier:1.0f constant:0.0f]];
+    return [constraints copy];
+}
+#warning Example Code END
 
 
 #pragma mark - VideoPlayerControlsViewControllerDelegate

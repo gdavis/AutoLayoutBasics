@@ -74,7 +74,7 @@
                         <viewControllerLayoutGuide type="bottom" id="q62-eQ-1Mh"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EhF-Dd-Oqe">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                        <rect key="frame" x="0.0" y="0.0" width="455" height="239"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -93,46 +93,26 @@
                         <viewControllerLayoutGuide type="bottom" id="xed-1M-vmL"/>
                     </layoutGuides>
                     <view key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="grp-Wk-WUx">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="61"/>
+                        <rect key="frame" x="0.0" y="0.0" width="455" height="61"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9jc-j5-yJV" userLabel="Progress Container View">
+                                <rect key="frame" x="81" y="12" width="291" height="41"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AhY-y1-48b">
+                                        <rect key="frame" x="5" y="19" width="281" height="2"/>
+                                    </progressView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPW-eX-zC3" userLabel="Play Button">
-                                <rect key="frame" x="0.0" y="0.0" width="61" height="61"/>
+                                <rect key="frame" x="10" y="9" width="44" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="play">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="playPauseButtonTouched:" destination="4T2-pn-ldk" eventType="touchUpInside" id="Fo0-Eb-6dr"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9jc-j5-yJV" userLabel="Progress Container View">
-                                <rect key="frame" x="61" y="0.0" width="291" height="61"/>
-                                <subviews>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AhY-y1-48b">
-                                        <rect key="frame" x="5" y="30" width="281" height="2"/>
-                                    </progressView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAu-1Y-uzm">
-                                <rect key="frame" x="352" y="0.0" width="90" height="61"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                                <state key="normal" title="Fullscreen">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="largeButtonTouched:" destination="4T2-pn-ldk" eventType="touchUpInside" id="CJS-TX-6hO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RR7-TD-Vtf">
-                                <rect key="frame" x="442" y="0.0" width="38" height="60"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                                <state key="normal" title="Fit">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="smallButtonTouched:" destination="4T2-pn-ldk" eventType="touchUpInside" id="DzA-5d-2Qa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -161,32 +141,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IXz-jb-Qpl" userLabel="Video Container View">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                                <rect key="frame" x="13" y="61" width="455" height="239"/>
                                 <connections>
                                     <segue destination="ntE-rD-E1w" kind="embed" identifier="player" id="wAX-gx-SqU"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wKR-HP-tyf" userLabel="Controls Container View">
-                                <rect key="frame" x="0.0" y="357" width="480" height="61"/>
+                                <rect key="frame" x="13" y="330" width="455" height="61"/>
                                 <connections>
                                     <segue destination="4T2-pn-ldk" kind="embed" identifier="controls" id="DAZ-xm-wyK"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yg-2z-xgH" userLabel="Play Button">
-                                <rect key="frame" x="190" y="130" width="100" height="100"/>
-                                <state key="normal" image="large-play">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="largePlayButtonTouched:" destination="Hbr-aN-Zce" eventType="touchUpInside" id="gYY-qN-lOZ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="largePlayButton" destination="2yg-2z-xgH" id="Mt2-rY-qdR"/>
                         <outlet property="videoContainerView" destination="IXz-jb-Qpl" id="zYb-mr-Pkh"/>
                     </connections>
                 </viewController>
@@ -196,7 +166,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="large-play" width="100" height="100"/>
         <image name="play" width="19" height="27"/>
     </resources>
 </document>

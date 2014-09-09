@@ -58,7 +58,7 @@ static const NSTimeInterval VideoPlayerVideoViewProgressUpdateInterval = 1.0f / 
 
 - (void)setupVideoPlayer
 {
-    NSURL *videoURL = [[NSBundle mainBundle] URLForResource:@"oceans-clip-sm" withExtension:@"mp4"];
+    NSURL *videoURL = [[NSBundle mainBundle] URLForResource:@"oceans-clip" withExtension:@"mp4"];
     self.moviePlayerController = [[MPMoviePlayerController alloc] initWithContentURL:videoURL];
     self.moviePlayerController.controlStyle = MPMovieControlStyleNone;
     self.moviePlayerController.shouldAutoplay = NO;

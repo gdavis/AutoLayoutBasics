@@ -35,12 +35,12 @@
 
 #pragma mark al1 - start
 
-- (void)updateViewConstraints
-{
-    [super updateViewConstraints];
-    
-    [self updateVideoPlayerConstraints];
-}
+//- (void)updateViewConstraints
+//{
+//    [super updateViewConstraints];
+//    
+//    [self updateVideoPlayerConstraints];
+//}
 
 
 - (void)updateVideoPlayerConstraints
@@ -80,7 +80,7 @@
 // al3
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    [self.view setNeedsUpdateConstraints];
+    [self updateVideoPlayerConstraints];
 }
 
 #pragma mark al1 - end
