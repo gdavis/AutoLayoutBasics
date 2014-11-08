@@ -35,12 +35,13 @@
 
 #pragma mark al1 - start
 
-//- (void)updateViewConstraints
-//{
-//    [super updateViewConstraints];
-//    
-//    [self updateVideoPlayerConstraints];
-//}
+
+- (void)updateViewConstraints
+{
+    [super updateViewConstraints];
+    
+    [self updateVideoPlayerConstraints];
+}
 
 
 - (void)updateVideoPlayerConstraints
