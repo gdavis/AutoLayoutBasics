@@ -33,9 +33,8 @@
     }
 }
 
-#pragma mark al1 - start
 
-
+// al1
 - (void)updateViewConstraints
 {
     [super updateViewConstraints];
@@ -83,8 +82,6 @@
 {
     [self updateVideoPlayerConstraints];
 }
-
-#pragma mark al1 - end
 
 
 @end
