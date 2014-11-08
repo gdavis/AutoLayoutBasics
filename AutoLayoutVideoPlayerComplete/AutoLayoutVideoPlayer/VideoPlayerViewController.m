@@ -66,6 +66,7 @@
     [super viewDidLayoutSubviews];
     
     self.closedCaptionLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.view.frame);
+    [self.closedCaptionLabel layoutIfNeeded];
 }
 #warning Exercise Code Block END
 
