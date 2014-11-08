@@ -29,16 +29,16 @@
 }
 
 
-// al1
+#warning al1
 
 
 - (void)videoPlayerDidChangeFullscreenMode:(BOOL)isFullscreen
 {
-    // al2
+    #warning al2
 }
 
 
-// al3
+#warning al3
 
 
 @end

@@ -11,6 +11,6 @@
 
 @implementation VideoPlayerCaptionLabel
 
-// al6
+#warning al6
 
 @end

@@ -23,7 +23,7 @@
 
 @property (nonatomic, getter=isFullscreen) BOOL fullscreen;
 
-// al7
+#warning al7
 
 @end
 
@@ -62,11 +62,11 @@
 }
 
 
-// al5
+#warning al5
 
-// al8
+#warning al8
 
-// al9-11
+#warning al9-11
 
 
 #pragma mark - Large Play Button
