@@ -54,6 +54,9 @@
 }
 
 
+#warning al5
+
+
 - (void)setFullscreen:(BOOL)fullscreen
 {
     _fullscreen = fullscreen;
@@ -61,8 +64,6 @@
     [self.delegate videoPlayerDidChangeFullscreenMode:fullscreen];
 }
 
-
-#warning al5
 
 #warning al8
 

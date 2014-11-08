@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) VideoPlayerViewController *videoPlayerViewController;
 
+// add video width and height constraint outlets here.
+
 @end
 
 
