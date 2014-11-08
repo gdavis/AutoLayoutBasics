@@ -106,6 +106,7 @@
 				778673A219BCD7E6006E649F /* AppDelegate.m */,
 				778673A419BCD7E6006E649F /* ViewController.h */,
 				778673A519BCD7E6006E649F /* ViewController.m */,
+				778673A719BCD7E6006E649F /* Main.storyboard */,
 				778673C219BCD81D006E649F /* Video Player */,
 				778673C019BCD805006E649F /* Images.xcassets */,
 				7786739D19BCD7E6006E649F /* Supporting Files */,
@@ -154,7 +155,6 @@
 				778673D419BD044C006E649F /* VideoPlayerCaptionController.m */,
 				771717AA19BD255400B903AB /* VideoPlayerCaptionLabel.h */,
 				771717AB19BD255400B903AB /* VideoPlayerCaptionLabel.m */,
-				778673A719BCD7E6006E649F /* Main.storyboard */,
 			);
 			name = "Video Player";
 			sourceTree = "<group>";
