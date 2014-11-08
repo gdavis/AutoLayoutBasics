@@ -112,6 +112,8 @@
 {
     self.largePlayButton.hidden = YES;
     self.controlsViewController.showPauseButton = YES;
+    
+    // TODO: Hide end slate
 }
 
 
@@ -124,6 +126,8 @@
 - (void)videoPlayerPlaybackDidStop
 {
     self.controlsViewController.showPauseButton = NO;
+    
+    // TODO: Show end slate
 }
 
 
